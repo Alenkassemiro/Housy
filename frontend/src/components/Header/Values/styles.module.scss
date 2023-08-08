@@ -1,0 +1,40 @@
+.main{
+    width: 30rem;
+    background-color: var(--neutral-0);
+    margin: 4rem;
+    margin-top: 10rem;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    transition: 1s;
+    .card{
+        margin: 2rem;
+    }
+    .topInfo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--secondary);
+    }
+    h3{
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 1.5rem;
+    }
+
+    .leftArrow{
+        width: 15px !important;
+       // padding-bottom:1.3rem ;
+        margin: 0;
+    }
+    p{
+        padding-top: 1.5rem;
+        font-size: 14px;
+        font-weight: 400;
+        
+    }
+    &:hover{
+        transform: scale(1.03);
+        
+    }
+}

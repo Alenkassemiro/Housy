@@ -1,11 +1,46 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-  background-color: --secundary-glow;
+  background-color:  #C6DAE8;
+  position: relative;
+  
+  h1{
+    font-size: 45px;
+    font-weight: 700;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+
+  .banner{
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .values{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .house{
+    width: 30rem;
+  }
+
+  .imageHouse{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15rem;
+    margin-bottom: 10rem;
+    h2{
+      font-size: 50px;
+      font-weight: 700;
+      margin-left: 2rem;
+      color: var(--secondary);
+      margin-right: 8rem;
+    }
+  }
 }
 
 
