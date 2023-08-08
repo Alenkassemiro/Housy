@@ -3,6 +3,7 @@
 :root {
   --primary: #C6DAE8;
   --secondary: #363636;
+  --secondary-2: #5a5a5a;
 
   --neutral-0: #ffffff;
   --neutral-50: #F2F2F2;
@@ -22,6 +23,7 @@
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif !important;
+  color: var(--secondary);
 
   &:focus {
     outline: none;
