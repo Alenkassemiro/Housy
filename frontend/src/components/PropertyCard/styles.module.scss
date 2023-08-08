@@ -1,20 +1,20 @@
 .card {
-  cursor: pointer;
   transition: 400ms;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  &:hover {
-    scale: 1.02;
-  }
+  background-color: var(--neutral-0);
+  width: 25rem;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
 
   a {
     text-align: center;
 
     img {
-      width: 80%;
+      width: 100%;
+      cursor: pointer;
       height: auto;
       border-radius: 1rem;
     }
@@ -22,7 +22,7 @@
 }
 
 .cardFooter {
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
