@@ -11,7 +11,7 @@
 # specific language governing permissions and limitations under the License.
 
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from operator import attrgetter
 
 import auction.wallet as Wallet
@@ -30,7 +30,7 @@ class Auctioneer():
     def auction_create(
             self, seller: str, item: Item, erc20: str,
             title: str, description: str, min_bid_amount: int,
-            start_date: datetime, end_date: datetime, current_date: datetime):
+            start_date: datetime, end_date: datetime, current_date: datetime, rental_duration: int):
 
         try:
             if start_date < current_date:
@@ -47,8 +47,9 @@ class Auctioneer():
                                  "is already being auctioned")
 
             auction = Auction(seller, item, erc20, title, description,
-                              start_date, end_date, min_bid_amount)
+                              start_date, end_date, min_bid_amount, rental_duration)
             self._auctions[auction._id] = auction
+            auction.rent(renter)
 
             auction_json = json.dumps(auction, cls=AuctionEncoder)
             notice_payload = f'{{"type": "auction_create", "content": {auction_json}}}'
@@ -110,8 +111,11 @@ class Auctioneer():
         try:
             auction = self._auctions.get(auction_id)
 
+
             if not auction:
                 raise ValueError(f"There's no auction with id {auction_id}")
+            if auction.is_rent_due(msg_date):
+                return auction.return_nft()
             if msg_date < auction.end_date:
                 raise ValueError(
                     f"It can only end after {auction.end_date.isoformat()}")
@@ -225,3 +229,102 @@ class Auctioneer():
         erc20_balance = balance.erc20_get(erc20)
 
         return amount <= erc20_balance
+
+
+# class RentAuction(Auction):
+#     def __init__(
+#             self, seller, item, erc20, title, description,
+#             min_bid_amount, start_date, end_date, rental_duration, current_date):
+#         super().__init__(seller, item, erc20, title, description,
+#                          start_date, end_date, min_bid_amount)
+#         self.rental_duration = rental_duration
+#         self.rent_start_date = current_date
+#         self.renter = None
+
+
+#     def auction_rent_end(self, rollup_address, msg_date, msg_sender, withdraw=False):
+#         try:
+#             auction = self._auctions.get(auction_id)
+
+#             if not auction:
+#                 raise ValueError(f"There's no auction with id {auction_id}")
+
+#             if auction.state == Auction.RENTED and auction.rent_start_date + timedelta(days=auction.rental_duration) <= msg_date:
+#                 output = self._wallet.erc721_transfer(
+#                     account=auction.renter, 
+#                     to=auction.seller, 
+#                     erc721=auction.item.erc721,
+#                     token_id=auction.item.token_id)
+
+#                 if type(output) is Error:
+#                     return output
+
+
+#                 auction.state = Auction.FINISHED
+#                 auction.renter = None
+#                 auction.rent_start_date = None
+
+#                 notice_payload = f'{{"type": "rent_end", "auction_id": {auction.id}}}'
+#                 notice = Notice(notice_payload)
+#                 outputs = [notice]
+#                 logger.info(f"Rent for Auction {auction.id} finished and NFT returned to owner")
+#                 return outputs
+#             else:
+#                 if msg_date < auction.end_date:
+#                 raise ValueError(
+#                     f"It can only end after {auction.end_date.isoformat()}")
+#             notice_template = '{{"type": "auction_end", "content": {}}}'
+#             winning_bid = auction.winning_bid
+#             outputs: list[Output] = []
+
+#             if not winning_bid:
+#                 notice_payload = notice_template.format(
+#                     f'{{"auction_id": {auction.id}}}')
+#                 notice = Notice(notice_payload)
+#                 outputs.append(notice)
+#             else:
+#                 output = self._wallet.erc20_transfer(
+#                     account=winning_bid.author,
+#                     to=auction.creator,
+#                     erc20=auction.erc20,
+#                     amount=winning_bid.amount)
+
+#                 if type(output) is Error:
+#                     return output
+
+#                 outputs.append(output)
+#                 output = self._wallet.erc721_transfer(
+#                     account=auction.creator,
+#                     to=winning_bid.author,
+#                     erc721=auction.item.erc721,
+#                     token_id=auction.item.token_id)
+
+#                 if type(output) is Error:
+#                     return output
+
+#                 outputs.append(output)
+#                 if withdraw and msg_sender == auction.winning_bid.author:
+#                     output = self._wallet.erc721_withdraw(
+#                         rollup_address=rollup_address,
+#                         sender=msg_sender,
+#                         erc721=auction.item.erc721,
+#                         token_id=auction.item.token_id)
+
+#                     if type(output) is Error:
+#                         return output
+
+#                     outputs.append(output)
+
+#                 bid_str = json.dumps(winning_bid, cls=BidEncoder)
+#                 notice_payload = notice_template.format(bid_str)
+#                 notice = Notice(notice_payload)
+#                 outputs.append(notice)
+
+#             auction.finish()
+#             logger.info(f"Auction {auction.id} finished")
+#             return outputs
+#         except Exception as error:
+#             error_msg = f"Failed to end auction. {error}"
+#             logger.debug(error_msg, exc_info=True)
+#             return Error(error_msg)
+                
