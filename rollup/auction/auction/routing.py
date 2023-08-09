@@ -145,6 +145,7 @@ class CreateAuctionRoute(AuctioneerRoute):
             self._request_args["start_date"])
         self._request_args["end_date"] = datetime.fromtimestamp(
             self._request_args["end_date"])
+            
 
     def execute(self, match_result, request=None):
         super().execute(match_result, request)
@@ -160,7 +161,10 @@ class CreateAuctionRoute(AuctioneerRoute):
                                                    "start_date"),
                                                self._request_args.get(
                                                    "end_date"),
+                                                self._request_args.get(
+                                                   "rent_duration"),
                                                self._msg_timestamp)
+
 
 
 class EndAuctionRoute(AuctioneerRoute):

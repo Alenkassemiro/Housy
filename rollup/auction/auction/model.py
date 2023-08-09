@@ -198,6 +198,35 @@ class Auction:
     def __lt__(self, other):
         return (self.id < other.id)
 
+    def rent(self, renter):
+        if self.state != Auction.CREATED:
+            raise ValueError("Cannot rent auction that is not in the CREATED state")
+        self.state = Auction.RENTED
+        self.renter = renter
+        self.rent_start_date = datetime.now()
+
+    def is_rent_due(self, current_date):
+        return self.state == Auction.RENTED and self.rent_start_date + timedelta(days=self.rental_duration) <= current_date
+
+    def return_nft(self):
+        if self.state == Auction.RENTED:
+            output = self._wallet.erc721_transfer(
+                account=self.renter,
+                to=self.seller,
+                erc721=self.item.erc721,
+                token_id=self.item.token_id)
+
+            if type(output) is Error:
+                return output
+
+            self.state = Auction.FINISHED
+            self.renter = None
+            self.rent_start_date = None
+
+            outputs = [output]
+            logger.info(f"Auction {self.id} finished and NFT returned to owner")
+            return outputs
+
     def bid(self, bid: Bid):
         if self.state == Auction.FINISHED:
             raise ValueError("The auction has already been finished")
