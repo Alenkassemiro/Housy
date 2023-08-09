@@ -1,6 +1,6 @@
 import styles from '@/styles/index.module.scss';
 import Header from '@/components/Header';
-import Values from '@/components/Header/Values';
+import Values from '@/components/Values';
 export default function Home() {
   const security = 'Security';
   const securityDescription =

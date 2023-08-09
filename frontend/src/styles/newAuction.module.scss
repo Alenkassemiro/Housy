@@ -1,0 +1,66 @@
+.main{
+    margin-left: 4rem;
+
+    h1{
+        font-size: 38px;
+        margin-bottom: 4rem;
+    }
+    .input{
+        display: flex;
+        flex-direction: column;
+        label{
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+           
+        }
+        input{
+            border-radius: 8px;
+            border: 1px solid var(--secondary);
+            padding: 5px;
+            margin-bottom: 2rem;
+        }
+        .price{
+            width: 100px;
+        }
+        .address{
+            width: 400px;
+        }
+        .date{
+            width: 70px;
+        }
+
+        .legalInfo{
+            width: 400px;
+        }
+    }
+
+    label{
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+
+    .image{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .checkboxState{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        p{
+            font-size: 13px;
+            font-weight: 400;
+            margin-right: 0.5rem;
+        }
+       input{
+        margin-right: 2rem;
+      
+        font-size: 15px;
+       }
+    }
+}
