@@ -1,5 +1,7 @@
 # Housy
 ## The Problem
+The high taxation on rental profits presents a significant challenge for landlords and tenants alike. Elevated tax rates diminish property owners' net gains, discouraging investments in rental properties and affecting housing availability. Tenants, in turn, may face higher rents due to the tax burdens imposed on landlords. This can result in economic hardships for tenants, especially in areas with a heated real estate market. Furthermore, excessive taxation can harm the overall economy by discouraging activity in the real estate sector and reducing potential for economic growth. Therefore, striving for a fair balance between taxation and incentivizing investment in the rental market is essential to promote a healthy and accessible real estate market.
+<br>
 ## Our Solution
 ### Auction Economic Justification
 ## Technologies
