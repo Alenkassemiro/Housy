@@ -5,6 +5,9 @@ The high taxation on rental profits presents a significant challenge for landlor
 ## Our Solution
 ### Auction Economic Justification
 ## Technologies
+- Next.js
+- Ethers.js
+- Cartesi  
 ## Architechture
 ## File Tree
 ## Our Team
