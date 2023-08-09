@@ -1,7 +1,17 @@
 import styles from '@/styles/index.module.scss';
 import Header from '@/components/Header';
 import Values from '@/components/Values';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import React, { useEffect } from 'react';
+
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000
+    });
+  }, []);
   const security = 'Security';
   const securityDescription =
     'Ensuring secure tokenization with blockchain technology, thorough ownership verification, and transparent information for user confidence.';
@@ -21,12 +31,12 @@ export default function Home() {
           of renting real estate
         </h1>
         <img src="background_buildings.png" className={styles.banner} />
-        <div className={styles.values}>
+        <div data-aos="fade-in" className={styles.values}>
           <Values title={security} description={securityDescription} />
           <Values title={user} description={userDescription} />
           <Values title={transparency} description={transparencyDescription} />
         </div>
-        <div className={styles.imageHouse}>
+        <div data-aos="flip-up" className={styles.imageHouse}>
           <h2>
             Bid your <br />
             dream place
