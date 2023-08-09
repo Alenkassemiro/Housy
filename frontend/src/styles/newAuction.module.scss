@@ -45,6 +45,7 @@
     .image{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .checkboxState{
@@ -62,5 +63,34 @@
       
         font-size: 15px;
        }
+    }
+
+    .inputDate{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        label{
+            margin-right: 1rem;
+        }
+
+        input
+        {   border-radius: 10px;
+            width: 100px;
+            height: 24px;
+            margin-right: 10px;
+            border: 1px solid var(--secondary);
+            padding: 5px;
+        }
+    }
+
+    .inputImage{
+        width: 150px;
+        display: flex;
+        align-self: center;
+        padding: 4rem 6rem;
+        margin: 4rem;
+        border: 1px solid var(--secondary);
+        border-radius: 10px;
     }
 }

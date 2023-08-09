@@ -114,7 +114,7 @@ const Header = () => {
             <li
               className={router.pathname === '/quemSomos' ? styles.active : ''}
             >
-              <Link href="/quemSomos">Vender</Link>
+              <Link href="/quemSomos">Rent Your Property</Link>
             </li>
             <li
               className={
