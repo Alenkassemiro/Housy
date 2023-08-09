@@ -9,6 +9,11 @@ The high taxation on rental profits presents a significant challenge for landlor
 - Ethers.js
 - Cartesi  
 ## Architechture
+<div>
+<img src="https://github.com/Alenkassemiro/Housy/blob/main/docs/Architechture.png" width="85%;" alt="Architecture image">
+</div>
+<br>
+
 ## File Tree
 ## Our Team
 <table>
