@@ -49,23 +49,49 @@ incentivizing investment in the rental market is essential to promote a healthy 
 <br>
 
 ## File Tree
-```
-├── docs
-│
-├── frontend
-│    ├── public
-│    ├── src
-│
-├── rollup
-│    ├── .github
-│    ├── .vscode
-│    ├── auction
-│    ├── build
-│    ├── common-contracts
-│    ├── frontend-console
-│    ├── frontend-echo
-│
-```
+
+- 📂 docs
+
+- 📂 frontend
+    - 📂 public
+    - 📂 icons
+        - 📂 properties
+
+- 📂 rollup
+  
+    - 📂 .github
+    - ⚙️ .vscode
+      
+    - 📂 auction
+        - 📂 auction
+        - 🐍 python files
+
+        - 📂 deployments
+            - 📂 goerli
+            - 📂 localhost
+    
+        - 🧪 test
+            - 🐍 python files
+              
+    - 📂 commom-contracts
+    - 📂 goerli
+              
+     
+    - 🚢 Dockerfile
+    - 🚢 docker-bake.hcl
+    - 🚢 docker-bake.override.hcl
+    - 🚢 docker-compose.override.hcl
+      
+    - 🔑 env.arbitrum_goerli
+    - 🔑 env.goerli
+    - 🔑 env.gnosis_chiado
+    - 🔑 env.optimism_goerli
+    - 🔑 env.polygon_mumbai
+    - 🔑 env.sepolia
+      
+    
+- 📄 README.md
+
 ## Our Team
 <table>
   <tr>
