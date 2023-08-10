@@ -15,6 +15,23 @@ The high taxation on rental profits presents a significant challenge for landlor
 <br>
 
 ## File Tree
+```
+├── docs
+│
+├── frontend
+│    ├── public
+│    ├── src
+│
+├── rollup
+│    ├── .github
+│    ├── .vscode
+│    ├── auction
+│    ├── build
+│    ├── common-contracts
+│    ├── frontend-console
+│    ├── frontend-echo
+│
+```
 ## Our Team
 <table>
   <tr>
