@@ -58,15 +58,6 @@ const MyPropertyCard: FC<Props> = ({ address, picture, id }: Props) => {
           </p>
         </Link>
         <SlOptionsVertical
-          // onClick={() => {
-          //   toast.loading('Feature under development', {
-          //     duration: 3000,
-          //     position: 'top-right',
-          //     style: {
-          //       fontSize: '1.6rem',
-          //     },
-          //   });
-          // }}
           size={25}
           onClick={() => setIsDropdownOpen((prevState) => !prevState)}
         />
@@ -78,7 +69,9 @@ const MyPropertyCard: FC<Props> = ({ address, picture, id }: Props) => {
         >
           <ul>
             <li className={styles.dropdownItem}>
-              Start a new auction <AiOutlinePlusCircle />
+              <Link href={`/newAuction/${id}`}>
+                Start a new auction <AiOutlinePlusCircle />
+              </Link>
             </li>
           </ul>
         </div>

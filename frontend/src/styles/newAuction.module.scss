@@ -1,96 +1,117 @@
-.main{
-    margin-left: 4rem;
+.main {
+  margin-left: 4rem;
 
-    h1{
-        font-size: 38px;
-        margin-bottom: 4rem;
-    }
-    .input{
-        display: flex;
-        flex-direction: column;
-        label{
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 5px;
-           
-        }
-        input{
-            border-radius: 8px;
-            border: 1px solid var(--secondary);
-            padding: 5px;
-            margin-bottom: 2rem;
-        }
-        .price{
-            width: 100px;
-        }
-        .address{
-            width: 400px;
-        }
-        .date{
-            width: 70px;
-        }
+  h1 {
+    font-size: 38px;
+    margin-bottom: 4rem;
+  }
+}
 
-        .legalInfo{
-            width: 400px;
-        }
-    }
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
 
-    label{
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
+.cardContainer {
+  height: 100%;
+}
+
+.form {
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    border-radius: 8px;
+    border: 1px solid var(--secondary);
+    padding: 5px;
+    margin-bottom: 2rem;
+    resize: none;
+  }
+  .price {
+    width: 100px;
+  }
+  .address {
+    width: 400px;
+  }
+  .date {
+    width: 70px;
+  }
+
+  .legalInfo {
+    width: 400px;
+  }
+}
+.dateContainer {
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}
+
+.dateRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
 
-    .image{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
-    .checkboxState{
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 2rem;
-        margin-top: 1rem;
-        p{
-            font-size: 13px;
-            font-weight: 400;
-            margin-right: 0.5rem;
-        }
-       input{
-        margin-right: 2rem;
-      
-        font-size: 15px;
-       }
-    }
+.checkboxState {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-right: 0.5rem;
+  }
+  input {
+    margin-right: 2rem;
 
-    .inputDate{
-        display: flex;
-        flex-direction: row;
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-        label{
-            margin-right: 1rem;
-        }
+    font-size: 15px;
+  }
+}
 
-        input
-        {   border-radius: 10px;
-            width: 100px;
-            height: 24px;
-            margin-right: 10px;
-            border: 1px solid var(--secondary);
-            padding: 5px;
-        }
-    }
+.inputDate {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  label {
+    margin-right: 1rem;
+  }
 
-    .inputImage{
-        width: 150px;
-        display: flex;
-        align-self: center;
-        padding: 4rem 6rem;
-        margin: 4rem;
-        border: 1px solid var(--secondary);
-        border-radius: 10px;
-    }
+  input {
+    border-radius: 10px;
+    width: 100px;
+    height: 24px;
+    margin-right: 10px;
+    border: 1px solid var(--secondary);
+    padding: 5px;
+  }
+}
+
+.inputImage {
+  width: 150px;
+  display: flex;
+  align-self: center;
+  padding: 4rem 6rem;
+  margin: 4rem;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
 }
