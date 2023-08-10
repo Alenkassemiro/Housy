@@ -1,6 +1,6 @@
 <h1 align="center">
     <a href="https://housy-chi.vercel.app/">
-    <img src="https://github.com/Alenkassemiro/Housy/assets/99203402/9b7105e3-8f80-4b85-ae34-df8d6b6f9563" width="200px">
+    <img src="https://github.com/Alenkassemiro/Housy/blob/main/docs/Housy.svg" width="200px">
     </a>
 </h1>
 
@@ -9,7 +9,7 @@
   <i align="center">Tokenize your future with Housy: where real estate and innovation converge.</i>
 </p>
 <p align="center">
-   <img  src="https://github.com/Alenkassemiro/Housy/assets/99203402/ba453fe0-1f0d-472e-bbc0-ba57f29319e7" width="800px" align="center" alt="banner">
+   <img  src="https://github.com/Alenkassemiro/Housy/blob/main/docs/banner.jpg" width="800px" align="center" alt="banner">
 </p>
 
 ## DApp Link
@@ -27,7 +27,7 @@ incentivizing investment in the rental market is essential to promote a healthy 
 ## 💡 Our Solution
 
 <div align="center">
-<img src="https://github.com/Alenkassemiro/Housy/assets/99203402/00c45a44-027b-41c0-a3b3-af3d5a5cc78d" width="200px" alt="NFT"> 
+<img src="https://github.com/Alenkassemiro/Housy/blob/main/docs/card.svg" width="200px" alt="NFT"> 
 </div>
 
 ### Auction Economic Justification
@@ -46,15 +46,15 @@ However, if a real estate company uses Housy to receive its rents, this operatio
  ## Features
 
 <p align="center">
-    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/c86368ee-895e-4d8f-a784-ba0dbb007375" alt="apis"/>
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/blob/main/docs/1.png" alt="apis"/>
 &nbsp;
-    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/db732e93-9559-443e-accc-6525e032af73" alt="data-models"/>
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/blob/main/docs/2.png" alt="data-models"/>
 </p>
 
 <p align="center">
-    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/c0e126b8-f1f7-442c-99c0-51d2c67b0b22" alt="plugins"/>
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/blob/main/docs/3.png" alt="plugins"/>
 &nbsp;
-    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/a9a0c589-897c-4b1d-91c3-5bfc8a534d8b" alt="microservices"/>
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/blob/main/docs/4.png" alt="microservices"/>
 </p> 
 
 ## Why Cartesi?
