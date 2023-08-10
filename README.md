@@ -1,16 +1,50 @@
-# Housy
-## The Problem
-The high taxation on rental profits presents a significant challenge for landlords and tenants alike. Elevated tax rates diminish property owners' net gains, discouraging investments in rental properties and affecting housing availability. Tenants, in turn, may face higher rents due to the tax burdens imposed on landlords. This can result in economic hardships for tenants, especially in areas with a heated real estate market. Furthermore, excessive taxation can harm the overall economy by discouraging activity in the real estate sector and reducing potential for economic growth. Therefore, striving for a fair balance between taxation and incentivizing investment in the rental market is essential to promote a healthy and accessible real estate market.
+
+<h1 align="center">
+    <a href="https://housy-chi.vercel.app/">
+    <img src="https://github.com/Alenkassemiro/Housy/assets/99203402/9b7105e3-8f80-4b85-ae34-df8d6b6f9563" width="200px">
+    </a>
+</h1>
+
+
+<p align="center">
+  <i align="center">Tokenize your future with Housy: where real estate and innovation converge.</i>
+</p>
+<p align="center">
+   <img  src="https://github.com/Alenkassemiro/Housy/assets/99203402/ba453fe0-1f0d-472e-bbc0-ba57f29319e7" width="800px" align="center" alt="banner">
+</p>
+
+ 
+
+
+## 🚨 The Problem
+ - The high taxation on rental profits presents a significant challenge for landlords and tenants alike.
+Elevated tax rates diminish property owners' net gains, discouraging investments in rental properties and affecting housing availability.
+Tenants, in turn, may face higher rents due to the tax burdens imposed on landlords. This can result in economic hardships for tenants,
+especially in areas with a heated real estate market. Furthermore, excessive taxation can harm the overall economy by discouraging activity
+ in the real estate sector and reducing potential for economic growth. Therefore, striving for a fair balance between taxation and
+incentivizing investment in the rental market is essential to promote a healthy and accessible real estate market.
 <br>
-## Our Solution
+
+## 💡 Our Solution
+
+<div align="center">
+<img src="https://github.com/Alenkassemiro/Housy/assets/99203402/00c45a44-027b-41c0-a3b3-af3d5a5cc78d" width="200px" alt="NFT"> 
+</div>
+
 ### Auction Economic Justification
+- **Transparency and Credibility**: <br>
+  Auctions provide a transparent and public process for asset sales. This can enhance the credibility of the Housy platform and foster trust among investors and buyers. The transparency in the auction process, coupled with the underlying blockchain technology, can offer an immutable record of all transactions, ensuring the integrity and authenticity of the asset's history.
+- **Maximization of Value**:<br> Competitive auctions can lead to the maximization of the value of the auctioned asset. Competition among buyers can drive up bids and, consequently, increase the final price achieved for the asset. This can be particularly advantageous for sellers on the Housy platform.
 ## Technologies
 - Next.js
 - Ethers.js
-- Cartesi  
+- Cartesi
+- SCSS
+  
+
 ## Architechture
-<div>
-<img src="https://github.com/Alenkassemiro/Housy/blob/main/docs/Architechture.png" width="85%;" alt="Architecture image">
+<div align="center">
+<img src="https://github.com/Alenkassemiro/Housy/blob/main/docs/Architechture.png" width="500px;" alt="Architecture image">
 </div>
 <br>
 
