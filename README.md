@@ -12,8 +12,8 @@
    <img  src="https://github.com/Alenkassemiro/Housy/assets/99203402/ba453fe0-1f0d-472e-bbc0-ba57f29319e7" width="800px" align="center" alt="banner">
 </p>
 
- 
-
+## DApp Link
+https://housy-chi.vercel.app/ 
 
 ## 🚨 The Problem
  - The high taxation on rental profits presents a significant challenge for landlords and tenants alike.
@@ -151,3 +151,4 @@ In our project we bring a real-world application, including finance services and
     </td>
   </tr>
 </table>
+
