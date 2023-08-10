@@ -1,6 +1,9 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
 
 import styles from "../styles/newAuction.module.scss";
+import { createInput } from "@/services/createInput";
+import { getAllAuctions } from "@/services/getData";
+import { toUnixTime } from "@/services/treatment";
 
 const newAuction = () => {
   const [reservePrice, setReservePrice] = useState(0);
@@ -11,7 +14,7 @@ const newAuction = () => {
   const [condition, setCondition] = useState("");
   const [legalInformation, setLegalInformation] = useState("");
 
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
 
     const data = {
@@ -25,7 +28,30 @@ const newAuction = () => {
     };
 
     console.log(data);
+
+    const payload = {
+      method: "create",
+      args: {
+        title: data.propertyAddress,
+        description: data.propertyDescription,
+        min_bid_amount: data.reservePrice,
+        start_date: toUnixTime(data.auctionStartDate),
+        rental_duration: 5
+      }
+    }
+
+    try {
+      await createInput(payload);
+      console.log("Input created successfully!");
+    }
+    catch (err) {
+      console.log(err);
+    }
+    
   };
+  useEffect(() => {
+    getAllAuctions();
+  });
 
   return (
     <div className={styles.main}>
