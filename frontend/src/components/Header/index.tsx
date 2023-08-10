@@ -112,9 +112,9 @@ const Header = () => {
         <nav className={styles.nav}>
           <ul className={styles.stroke}>
             <li
-              className={router.pathname === '/quemSomos' ? styles.active : ''}
+              className={router.pathname === '/rentProperty' ? styles.active : ''}
             >
-              <Link href="/quemSomos">Rent Your Property</Link>
+              <Link href="/rentProperty">Rent Your Property</Link>
             </li>
             <li
               className={

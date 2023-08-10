@@ -1,21 +1,21 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-import PropertyCard from '@/components/PropertyCard';
+import PropertyCard from "@/components/PropertyCard";
 
-import styles from '../../styles/newAuction.module.scss';
+import styles from "../../styles/newAuction.module.scss";
 
 const newAuction = () => {
   const router = useRouter();
 
   const data = {
-    id: '1',
-    picture: '1.jpg',
+    id: "1",
+    picture: "1.jpg",
     address: {
-      street: '486 Kuv Street',
-      city: 'Montgomery',
-      state: 'AL',
-      zip: '12345',
+      street: "486 Kuv Street",
+      city: "Montgomery",
+      state: "AL",
+      zip: "12345",
     },
   };
 
@@ -29,10 +29,10 @@ const newAuction = () => {
     <div className={styles.main}>
       <h1>New Auction</h1>
       <div className={styles.content}>
-        <form className={styles.form} style={{ justifySelf: 'flex-start' }}>
+        <form className={styles.form} style={{ justifySelf: "flex-start" }}>
           <div className={styles.input}>
             <label>Reserve Price</label>
-            <input type="text" defaultValue={'$'} className={styles.price} />
+            <input type="text" className={styles.price} />
           </div>
           <div className={styles.input}>
             <label>Property Address</label>
@@ -47,24 +47,33 @@ const newAuction = () => {
             <div className={styles.dateRow}>
               <div className={styles.input}>
                 <label>Starts at</label>
-                <input type="text" className={styles.date} />
+                <input type="date" className={styles.date} />
               </div>
               <div className={styles.input}>
                 <label>Ends at</label>
-                <input type="text" className={styles.date} />
+                <input type="date" className={styles.date} />
               </div>
             </div>
           </div>
 
-          <label>Condition</label>
-          <div className={styles.checkboxState}>
-            <p>New</p>
-            <input type="checkbox" />
-            <p>Renovated</p>
-            <input type="checkbox" />
-            <p>Requires repairs</p>
-            <input type="checkbox" />
+          <div>
+            <label className={styles.conditionContainerLabel}>Condition</label>
+            <div className={styles.checkboxState}>
+              <div className={styles.checkBoxField}>
+                <label>New</label>
+                <input type="checkbox" />
+              </div>
+              <div className={styles.checkBoxField}>
+                <label>Renovated</label>
+                <input type="checkbox" />
+              </div>
+              <div className={styles.checkBoxField}>
+                <label>Requires repairs</label>
+                <input type="checkbox" />
+              </div>
+            </div>
           </div>
+
           <div className={styles.input}>
             <label>Legal Information</label>
             <input type="text" className={styles.legalInfo} />
