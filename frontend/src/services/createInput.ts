@@ -1,0 +1,23 @@
+import { ethers } from "ethers";
+import { InputBox__factory } from "@cartesi/rollups";
+
+const INPUTBOX_ADDRESS = "0x142105FC8dA71191b3a13C738Ba0cF4BC33325e2";
+const DAPP_ADDRESS = "";
+
+export async function createInput(value: any) {
+    const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+    const signer = provider.getSigner();
+
+    const inputContract = InputBox__factory.connect(INPUTBOX_ADDRESS, signer);
+
+    const inputBytes = ethers.utils.isBytesLike(value)
+    ? value
+    : ethers.utils.toUtf8Bytes(value);
+
+    const tx = await inputContract.addInput(DAPP_ADDRESS, inputBytes);
+    
+    console.log("...");
+    const receipt = await tx.wait(1);
+    const event = receipt.events?.find((e) => e.event === "InputAdded");
+    console.log(`Input added!`);
+}
