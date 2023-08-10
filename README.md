@@ -69,6 +69,19 @@ In our project we bring a real-world application, including finance services and
 </div>
 <br>
 
+## Roadmap
+<img width="80%" src="https://github.com/Alenkassemiro/Housy/blob/main/docs/roadmap.png" alt="microservices"/>
+<br>
+
+- ### Market Fit (Adequação ao Mercado):
+    Our property rental tokenization is the solution that the market has been waiting for to simplify and optimize rental transactions while also reducing taxation. By deeply understanding the needs of landlords and tenants, we have created a platform that caters to their specific demands. This means that property owners will experience greater ease in renting out their properties, while tenants will enjoy a smoother and more transparent process. With our market-driven approach, we are on the brink of revolutionizing the way people rent properties.
+
+- ### Responsiveness (Responsividade)
+    User experience is our priority, which is why one of the upcoming steps is to make our application responsive. Regardless of the device you are using - be it a smartphone, tablet, or computer - our platform will adapt seamlessly, providing an immersive and intuitive experience. This means that you will be able to manage your rental transactions conveniently and efficiently, wherever you are, and always with the same exceptional quality.
+
+- ### AI Integration (Integração de IA)
+    Incorporating artificial intelligence into our platform is a crucial step to enhance the efficiency and accuracy of our services. Thanks to our AI-based credit analysis, landlords can have confidence in selecting reliable tenants, thereby mitigating financial risks. Furthermore, by utilizing advanced algorithms to assess risks, we facilitate the anticipation of receivables for renters, providing flexibility and peace of mind. Our AI integration not only makes our services more reliable but also positions us at the forefront of technological innovation, paving the way for a safer and more efficient future in rental transactions.
+
 ## File Tree
 ```
 ├── docs
