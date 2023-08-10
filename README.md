@@ -51,7 +51,10 @@ incentivizing investment in the rental market is essential to promote a healthy 
     <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/a9a0c589-897c-4b1d-91c3-5bfc8a534d8b" alt="microservices"/>
 </p> 
 
-
+## Why Cartesi?
+Cartesi is a powerful technology that aims to bridge the gap between blockchain and real-world computation. It offers a unique combination of features that make it an attractive choice for developers, businesses, and users seeking to build and use decentralized applications.
+Cartesi provides a bridge for Web2 developers to transition into the world of Web3 by offering a familiar development environment and tools while integrating the benefits of blockchain technology.
+In our project we bring a real-world application, including finance services and AI credit risk analysis in our roadmap. And all this applications we can code with Python, Rust, JS, excluding the necessity of only Solidity development.
 
 ## Technologies
 - Next.js
