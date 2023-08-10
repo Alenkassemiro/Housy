@@ -1,4 +1,3 @@
-
 <h1 align="center">
     <a href="https://housy-chi.vercel.app/">
     <img src="https://github.com/Alenkassemiro/Housy/assets/99203402/9b7105e3-8f80-4b85-ae34-df8d6b6f9563" width="200px">
@@ -35,6 +34,25 @@ incentivizing investment in the rental market is essential to promote a healthy 
 - **Transparency and Credibility**: <br>
   Auctions provide a transparent and public process for asset sales. This can enhance the credibility of the Housy platform and foster trust among investors and buyers. The transparency in the auction process, coupled with the underlying blockchain technology, can offer an immutable record of all transactions, ensuring the integrity and authenticity of the asset's history.
 - **Maximization of Value**:<br> Competitive auctions can lead to the maximization of the value of the auctioned asset. Competition among buyers can drive up bids and, consequently, increase the final price achieved for the asset. This can be particularly advantageous for sellers on the Housy platform.
+
+
+
+ ## Features
+
+<p align="center">
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/c86368ee-895e-4d8f-a784-ba0dbb007375" alt="apis"/>
+&nbsp;
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/db732e93-9559-443e-accc-6525e032af73" alt="data-models"/>
+</p>
+
+<p align="center">
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/c0e126b8-f1f7-442c-99c0-51d2c67b0b22" alt="plugins"/>
+&nbsp;
+    <img width="49%" src="https://github.com/Alenkassemiro/Housy/assets/99203402/a9a0c589-897c-4b1d-91c3-5bfc8a534d8b" alt="microservices"/>
+</p> 
+
+
+
 ## Technologies
 - Next.js
 - Ethers.js
