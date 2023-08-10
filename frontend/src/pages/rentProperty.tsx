@@ -3,7 +3,6 @@ import { useState, FormEvent, useEffect } from "react";
 import styles from "../styles/newAuction.module.scss";
 import { createInput } from "@/services/createInput";
 import { getAllAuctions } from "@/services/getData";
-import { toUnixTime } from "@/services/treatment";
 
 const newAuction = () => {
   const [reservePrice, setReservePrice] = useState(0);
@@ -27,15 +26,18 @@ const newAuction = () => {
       legalInformation,
     };
 
-    console.log(data);
-
     const payload = {
       method: "create",
       args: {
+        item: {
+          erc721: 0x4CA354590EB934E6094Be762b38dE75d1Dd605a9,
+          token_id: 1
+      },
+        erc20: 0x4340ac4FcdFC5eF8d34930C96BBac2Af1301DF40,
         title: data.propertyAddress,
         description: data.propertyDescription,
         min_bid_amount: data.reservePrice,
-        start_date: toUnixTime(data.auctionStartDate),
+        start_date: data.auctionStartDate,
         rental_duration: 5
       }
     }

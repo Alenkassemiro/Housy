@@ -28,9 +28,17 @@ class Auctioneer():
         self._wallet = wallet
 
     def auction_create(
-            self, seller: str, item: Item, erc20: str,
-            title: str, description: str, min_bid_amount: int,
-            start_date: datetime, end_date: datetime, current_date: datetime, rental_duration: int):
+            self, 
+            seller: str, 
+            item: Item, 
+            erc20: str,
+            title: str, 
+            description: str,
+            min_bid_amount: int,
+            start_date: datetime, 
+            end_date: datetime, 
+            current_date: datetime, 
+            rental_duration: int):
 
         try:
             if start_date < current_date:

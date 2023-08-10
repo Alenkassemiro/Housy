@@ -1,8 +1,9 @@
 import { ethers } from "ethers";
-import { InputBox__factory } from "@cartesi/rollups";
+import { InputBox__factory, EtherPortal__factory } from "@cartesi/rollups";
 
 const INPUTBOX_ADDRESS = "0x5a723220579C0DCb8C9253E6b4c62e572E379945";
 const DAPP_ADDRESS = "0x142105FC8dA71191b3a13C738Ba0cF4BC33325e2";
+const ETHER_PORTAL_ADDRESS = "0xA89A3216F46F66486C9B794C1e28d3c44D59591e";
 
 export async function createInput(value: any) {
     const provider = new ethers.providers.Web3Provider((window as any).ethereum);
