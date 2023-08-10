@@ -17,7 +17,15 @@ export async function createInput(value: any) {
     const tx = await inputContract.addInput(DAPP_ADDRESS, inputBytes);
     
     console.log("...");
-    const receipt = await tx.wait(1);
+    const receipt = await tx.wait()
+    
+    ;
     const event = receipt.events?.find((e) => e.event === "InputAdded");
-    console.log(`Input added!`);
+
+    if (!event) {
+        throw new Error(`InputAdded event not found in receipt of transaction ${receipt.transactionHash}`);
+    }
+    return {
+        status: "Input added",
+    };
 }
