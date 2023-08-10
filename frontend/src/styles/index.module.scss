@@ -27,11 +27,14 @@
   }
 
   .imageHouse{
+    width: 100%;
+    background-color:#ffff;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 15rem;
     margin-bottom: 10rem;
+    padding: 4rem;
     h2{
       font-size: 50px;
       font-weight: 700;

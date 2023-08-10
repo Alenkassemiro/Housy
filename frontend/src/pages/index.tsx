@@ -36,12 +36,14 @@ export default function Home() {
           <Values title={user} description={userDescription} />
           <Values title={transparency} description={transparencyDescription} />
         </div>
-        <div data-aos="flip-up" className={styles.imageHouse}>
+        <div data-aos="flip-up" >
+          <div className={styles.imageHouse}>
           <h2>
             Bid your <br />
             dream place
           </h2>
           <img src="house.svg" className={styles.house} />
+          </div>
         </div>
       </div>
     </>

@@ -124,9 +124,9 @@ const Header = () => {
               <Link href="/ourProperties">Our Properties</Link>
             </li>
             <li
-              className={router.pathname === '/comoAjudar' ? styles.active : ''}
+              className={router.pathname === '/aboutUs' ? styles.active : ''}
             >
-              <Link href="/comoAjudar">About Us</Link>
+              <Link href="/aboutUs">About Us</Link>
             </li>
             {wallet.address !== '' && (
               <li className={styles.walletInfo}>
