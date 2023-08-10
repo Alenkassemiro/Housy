@@ -1,18 +1,40 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 
 import styles from "../styles/newAuction.module.scss";
+import { toast } from "react-hot-toast";
+import { sendToIPFS } from "@/helpers/utils";
+import { sendInput } from "@/helpers/sendData";
 
 const newAuction = () => {
   const [reservePrice, setReservePrice] = useState(0);
   const [propertyAddress, setPropertyAddress] = useState("");
   const [propertyDescription, setPropertyDescription] = useState("");
-  const [auctionStartDate, setAuctionStartDate] = useState("");
-  const [auctionEndDate, setAuctionEndDate] = useState("");
+  const [auctionStartDate, setAuctionStartDate] = useState<Date>();
+  const [auctionEndDate, setAuctionEndDate] = useState<Date>();
   const [condition, setCondition] = useState("");
   const [legalInformation, setLegalInformation] = useState("");
+  const [fileState, setFileState] = useState<File>();
 
-  const submitHandler = (e: FormEvent) => {
+  const handleChallengeAnswerChange = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
+    if (event.target.files) {
+      const file = event.target.files[0];
+      if (file) {
+        setFileState(file);
+      } else {
+        toast.error("Por favor, selecione um arquivo válido.");
+      }
+    }
+  };
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!fileState) return toast.error("Por favor, selecione um arquivo.");
+
+    const IPFSResponse = await sendToIPFS(fileState);
+
+    console.log(IPFSResponse);
 
     const data = {
       reservePrice,
@@ -25,6 +47,10 @@ const newAuction = () => {
     };
 
     console.log(data);
+
+    const sendInputResponse = await sendInput(data);
+
+    console.log(sendInputResponse);
   };
 
   return (
@@ -68,7 +94,10 @@ const newAuction = () => {
                 <input
                   type="date"
                   className={styles.date}
-                  onChange={(e) => setAuctionStartDate(e.target.value)}
+                  onChange={(e) => {
+                    const date = new Date(e.target.value);  
+                    setAuctionStartDate(date)
+                  }}
                 />
               </div>
               <div className={styles.input}>
@@ -76,7 +105,10 @@ const newAuction = () => {
                 <input
                   type="date"
                   className={styles.date}
-                  onChange={(e) => setAuctionEndDate(e.target.value)}
+                  onChange={(e) => {
+                    const date = new Date(e.target.value);  
+                    setAuctionEndDate(date)
+                  }}
                 />
               </div>
             </div>
@@ -109,11 +141,24 @@ const newAuction = () => {
             />
           </div>
 
-          <button type="submit" className={styles.submitBtn}>Cadastrar</button>
+          <button type="submit" className={styles.submitBtn}>
+            Create
+          </button>
         </form>
         <div className={styles.cardContainer}>
-          <div>
-            <img src="upload.png" alt="" className={styles.inputImage} />
+          <div className={styles.upload}>
+            <input
+              id="file-upload"
+              type="file"
+              onChange={handleChallengeAnswerChange}
+            />
+            {fileState ? (
+              <label htmlFor="file-upload" className={styles.uploaded}>
+                {fileState.name}
+              </label>
+            ) : (
+              <label htmlFor="file-upload">Upload File</label>
+            )}
           </div>
         </div>
       </div>

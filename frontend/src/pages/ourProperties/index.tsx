@@ -1,12 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Search from '@/components/Search';
+import PropertyCard from '@/components/PropertyCard';
+
+import { getAuctions } from '@/helpers/getData';
 
 import styles from '@/styles/ourProperties.module.scss';
-import PropertyCard from '@/components/PropertyCard';
 
 const ourProperties = () => {
   const [search, setSearch] = useState('');
+
+  const fetchData = async () => {
+    const response = await getAuctions();
+    console.log(response);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const data = [
     {
