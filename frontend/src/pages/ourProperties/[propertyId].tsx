@@ -1,32 +1,36 @@
-import Image from 'next/image';
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { toast } from "react-hot-toast";
 
-import styles from '@/styles/propertyPage.module.scss';
-import Map from '@/components/Map';
+import styles from "@/styles/propertyPage.module.scss";
 
 const PropertyPage = () => {
+  const [bid, setBid] = useState<string>();
+  const bidInputRef = useRef<HTMLInputElement>(null);
+
   const features = [
     {
-      name: 'Bedrooms',
+      name: "Bedrooms",
       description:
-        'Elegantly designed bedrooms, perfect for a growing family or guests',
-      value: '2',
+        "Elegantly designed bedrooms, perfect for a growing family or guests",
+      value: "2",
     },
     {
-      name: 'Bathrooms',
+      name: "Bathrooms",
       description:
-        'Modern and luxurious bathrooms, each with unique design elements.',
-      value: '3',
+        "Modern and luxurious bathrooms, each with unique design elements.",
+      value: "3",
     },
     {
-      name: 'Gym',
+      name: "Gym",
       description:
-        'State-of-the-art home gym with top-notch equipment for your fitness needs.',
-      value: '1',
+        "State-of-the-art home gym with top-notch equipment for your fitness needs.",
+      value: "1",
     },
   ];
 
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
+    address: "1600 Amphitheatre Parkway, Mountain View, california.",
     lat: 37.42216,
     lng: -122.08427,
   };
@@ -65,9 +69,7 @@ const PropertyPage = () => {
                       width={55}
                     />
                     <h3>
-                      {feature.value}
-                      {" "}
-                      {feature.name}
+                      {feature.value} {feature.name}
                     </h3>
                   </div>
                   <p>{feature.description}</p>
@@ -78,21 +80,64 @@ const PropertyPage = () => {
           <div className={styles.bidCard}>
             <div className={styles.field}>
               <span>Reserve price</span>
-              <p>$210.000,00</p>
+              <p>$210,000.00</p>
             </div>
             <div className={styles.field}>
               <span>Current value</span>
-              <p>$300.000,00 </p>
+              <p>{bid ? bid : "$300.000,00"} </p>
             </div>
-            <button>Make a bid</button>
-            <span className={styles.bidStatus}>Your bid is winning</span>
+            <input
+              className={styles.bidInput}
+              type="number"
+              ref={bidInputRef}
+              placeholder="Enter your bid"
+            />
+            <button
+              onClick={() => {
+                if (bidInputRef.current && !bidInputRef.current.value)
+                  return toast.error("Please enter a bid", {
+                    duration: 3000,
+                    position: "top-right",
+                    style: {
+                      fontSize: "1.6rem",
+                    },
+                  });
+                if (bidInputRef.current && +bidInputRef.current.value < 210000)
+                  return toast.error("Bid must be higher than reserve price", {
+                    duration: 3000,
+                    position: "top-right",
+                    style: {
+                      fontSize: "1.6rem",
+                    },
+                  });
+                if (bidInputRef.current) {
+                  let USDollar = new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  });
+                  setBid(USDollar.format(+bidInputRef.current.value));
+                  toast.success("Bid made successfully", {
+                    duration: 3000,
+                    position: "top-right",
+                    style: {
+                      fontSize: "1.6rem",
+                    },
+                  });
+                  bidInputRef.current.value = "";
+                }
+              }}
+            >
+              Make a bid
+            </button>
+            <span
+              className={`${styles.bidStatus} ${
+                bid ? styles.winning : styles.losing
+              }`}
+            >
+              {bid ? "Your bid is winning" : "Your bid is losing"}
+            </span>
           </div>
         </section>
-
-        {/* <div className={styles.location}>
-          <h2>Location of this property</h2> */}
-          {/* <Map location={location} zoomLevel={17} /> */}
-        {/* </div> */}
       </main>
     </>
   );

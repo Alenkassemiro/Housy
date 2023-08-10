@@ -76,7 +76,6 @@
 }
 
 .bidStatus {
-  border: 2px solid var(--success);
   border-radius: 2rem;
   padding: 0.4rem 0.8rem;
   text-align: center;
@@ -84,6 +83,22 @@
   font-weight: 500;
   width: fit-content;
   margin: auto;
+}
+
+.winning {
+  border: 2px solid var(--success)!important;
+}
+
+.losing {
+  border: 2px solid var(--warning)!important;
+}
+
+.bidInput{
+  margin: 0 auto 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--secondary);
+  padding: 1rem;
+  width: 80%;
 }
 
 .field {
@@ -114,7 +129,7 @@
   width: 25rem;
   padding: 0 1rem 1rem 1rem;
 
-  div{
+  div {
     display: flex;
     align-items: center;
 
@@ -124,7 +139,7 @@
     }
   }
 
-  p{
+  p {
     font-size: 1.4rem;
     font-weight: 600;
     text-align: center;
