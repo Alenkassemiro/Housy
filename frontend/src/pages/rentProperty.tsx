@@ -141,7 +141,12 @@ const newAuction = () => {
         </form>
         <div className={styles.cardContainer}>
           <div>
+          
+              
             <img src="upload.png" alt="" className={styles.inputImage} />
+          <form action="">
+            <input type="file"/>
+          </form>
           </div>
         </div>
       </div>
